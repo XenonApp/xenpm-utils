@@ -2,7 +2,7 @@
   "name": "xenpm-utils",
   "version": "0.2.0",
   "description": "Utils to use npm programmatically for xenpm",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jasmine"
   },
