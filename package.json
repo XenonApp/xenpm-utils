@@ -1,0 +1,32 @@
+{
+  "name": "xenpm-utils",
+  "version": "0.1.0",
+  "description": "Utils to use npm programmatically for xenpm",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XenonApp/xenpm-utils.git"
+  },
+  "keywords": [
+    "xenon",
+    "xenpm",
+    "npm"
+  ],
+  "author": "Andrew Stephan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XenonApp/xenpm-utils/issues"
+  },
+  "homepage": "https://github.com/XenonApp/xenpm-utils#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.3"
+  },
+  "dependencies": {
+    "json5": "^0.5.1",
+    "npm": "^4.2.0",
+    "npm-keyword": "^4.2.0"
+  }
+}
