@@ -4,7 +4,7 @@
   "description": "Utils to use npm programmatically for xenpm",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/XenonApp/xenpm-utils#readme",
   "devDependencies": {
-    "jasmine": "^2.5.3"
+    "code": "^4.0.0",
+    "mocha": "^3.2.0"
   },
   "dependencies": {
     "json5": "^0.5.1",
