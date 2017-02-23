@@ -11,13 +11,8 @@ module.exports.install = function(packages, options) {
     return npm('install', packages, options);
 };
 
-module.exports.outdated = function(packages, options) {
-    let args;
-    if (!Array.isArray(packages)) {
-        args = ['--json', packages];
-    } else {
-        args = ['--json', ...packages];
-    }
+module.exports.outdated = function(pkg, options) {
+    const args = ['--json', pkg];
     return npm('outdated', args, Object.assign({}, options, {ignoreErrors: true}))
         .then(results => JSON.parse(results));
 };
@@ -53,8 +48,6 @@ function npm(command, args, options) {
 
     return new Promise((resolve, reject) => {
         const cp = spawn(npmPath, newArgs, opts);
-
-        cp.on('error', err => console.error(err));
 
         let results = '';
         cp.stdout.on('data', data => results += data.toString());

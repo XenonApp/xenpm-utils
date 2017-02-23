@@ -54,4 +54,11 @@ describe('xenpm-utils', () => {
             return expect(results.name).not.to.be.undefined();
         });
     });
+
+    it('rejects on an error exit code', function() {
+        this.timeout(10000);
+        return pm.view('alsdjfowpiasdnfmaenopafjsofiaqj')
+            .then(() => fail('should fail'))
+            .catch(err => expect(err).to.not.be.null());
+    });
 });
