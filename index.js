@@ -7,6 +7,10 @@ const search = require('npm-keyword');
 
 const npmPath = `${path.join(__dirname, 'node_modules', '.bin', 'npm')}`;
 
+module.exports.list = function(options) {
+    return npm('list', '--json', options).then(results => JSON.parse(results));
+};
+
 module.exports.install = function(packages, options) {
     return npm('install', packages, options);
 };

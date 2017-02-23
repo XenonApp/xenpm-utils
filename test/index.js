@@ -7,6 +7,12 @@ const path = require('path');
 const pm = require('../index');
 
 describe('xenpm-utils', () => {
+    it('can list node packages', function() {
+        return pm.list({dir: __dirname}).then(results => {
+            expect(results.dependencies.mocha).to.not.be.undefined();
+        });
+    });
+
     it('can install and uninstall a node package', function() {
         this.timeout(10000);
         const pkg = 'xenon-css-mode';
