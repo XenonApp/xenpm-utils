@@ -5,7 +5,7 @@ const JSON5 = require('json5');
 const path = require('path');
 const search = require('npm-keyword');
 
-const npmPath = `${path.join(__dirname, 'node_modules', '.bin', 'npm')}`;
+const npmPath = `${path.join('..', '.bin', 'npm')}`;
 
 module.exports.list = function(options) {
     return npm('list', '--json', options).then(results => JSON.parse(results));
