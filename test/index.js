@@ -56,8 +56,20 @@ describe('xenpm-utils', () => {
     });
 
     it('can view package info', function() {
-        return pm.view('json5').then(results => {
-            return expect(results.name).not.to.be.undefined();
+        return pm.view('xenon-css-mode').then(results => {
+            return expect(results).not.to.be.empty();
+        });
+    });
+
+    it('can view a package field', function() {
+        return pm.view('xenon-css-mode', 'xenon').then(results => {
+            return expect(results).not.to.be.empty();
+        });
+    });
+
+    it('returns null when there are no results', function() {
+        return pm.view('left-pad', 'xenon').then(results => {
+            return expect(results).to.be.null();
         });
     });
 

@@ -27,8 +27,12 @@ module.exports.uninstall = function(packages, options) {
     return npm('uninstall', packages, options);
 };
 
-module.exports.view = function(pkg) {
-    return npm('view', pkg).then(results => JSON5.parse(results));
+module.exports.view = function(pkg, field) {
+    const args = [pkg];
+    if (field) {
+        args.push(field);
+    }
+    return npm('view', args);
 };
 
 function npm(command, args, options) {
@@ -58,7 +62,7 @@ function npm(command, args, options) {
             if (!options.ignoreErrors && code !== 0) {
                 return reject();
             }
-            return resolve(results);
+            return resolve(results ? results : null);
         });
     });
 }
