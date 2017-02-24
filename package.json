@@ -1,6 +1,6 @@
 {
   "name": "xenpm-utils",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Utils to use npm programmatically for xenpm",
   "main": "index.js",
   "scripts": {
