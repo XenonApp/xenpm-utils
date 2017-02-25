@@ -1,8 +1,6 @@
 'use strict';
 
 const spawn = require('child_process').spawn;
-const JSON5 = require('json5');
-const path = require('path');
 const search = require('npm-keyword');
 
 module.exports.list = function(options) {
